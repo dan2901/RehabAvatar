@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paginaWebDan</title>
+    <style>
+      body {
+        background-color: #f8f5f0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .header {
+        background-color: white;
+        color: #005744;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #c6a76b;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      p,
+      h2,
+      h4 {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      h2 {
+        color: #005744;
+      }
+
+      .parentDiv {
+        display: flex; /*flexible box layout --> acum poti aranja mai bine elementele*/
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .childDiv {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: white;
+        margin: 0 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .centered-text {
+        display: flex;
+        align-items: center; /*  centrare verticala*/
+        justify-content: center; /* centrare orizontala*/
+        height: 100%;
+      }
+
+      .game-container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap; /* allows wrapping on small screens */
+      }
+
+      .circle-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+      }
+
+      .angle-circle {
+        /*div cerc*/
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: conic-gradient(
+          #4ca431 0deg,
+          #ffffff 0deg
+        ); /*unghiul initial, care e 0 de verde, si restul e doar alb*/
+        border: 3px solid #005744;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .angle-text {
+        /*unghiurile de pe cerc pentru referinta*/
+        position: absolute;
+        color: #000000;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .center-angle {
+        /*unghiul senzorului*/
+        font-size: 36px;
+        font-weight: bold;
+        color: #005744;
+        z-index: 10;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #c6a76b;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .measurement-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #005744;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px;
+        padding: 20px;
+      }
+
+      .footer img.faculty-logo {
+        height: 80px;
+      }
+
+      .footer img.university-logo {
+        height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2 style="margin: 0">RehabAvatar - Monitorizare Mers</h2>
+    </div>
+    <div class="parentDiv">
+      <div class="childDiv">
+        <p>
+          Pentru ca jocul să funcționeze, este nevoie să intrați pe
+          <a href="https://172.20.10.2">acest link</a>
+          și să permiteți accesul: Advanced -> Proceed Anyway
+        </p>
+      </div>
+    </div>
+    <h2>Jocul Video</h2>
+    <!-- f8f5f0,700,540 -->
+    <div class="game-container">
+      <iframe
+        frameborder="0"
+        src="https://itch.io/embed-upload/13834638?color=f8f5f0"
+        allowfullscreen=""
+        width="700"
+        height="550"
+        ><a href="https://dandan7510.itch.io/rehabavatar4"
+          >Play RehabAvatar4 on itch.io</a
+        ></iframe
+      >
+
+      <div class="circle-container">
+        <h4>Unghiul tibiei</h4>
+        <div class="angle-circle" id="angleCircle">
+          <div class="center-angle measurement-value" id="centerAngle">0°</div>
+          <div
+            class="angle-text"
+            style="top: 10px; left: 50%; transform: translateX(-50%)"
+          >
+            <!-- top: 0% vertical, bottom: 100% vertical, left: 0% horizontal, right: 100% horizontal; translate misca element cu 50% al latimii sale (fine adjustments)  -->
+            90°
+          </div>
+          <div
+            class="angle-text"
+            style="top: 25%; right: 25%; transform: translate(50%, -50%)"
+          >
+            135°
+          </div>
+          <div
+            class="angle-text"
+            style="top: 50%; right: 10px; transform: translateY(-50%)"
+          >
+            180°
+          </div>
+          <div
+            class="angle-text"
+            style="bottom: 25%; right: 25%; transform: translate(50%, 50%)"
+          >
+            225°
+          </div>
+          <div
+            class="angle-text"
+            style="bottom: 10px; left: 50%; transform: translateX(-50%)"
+          >
+            270°
+          </div>
+          <div
+            class="angle-text"
+            style="bottom: 25%; left: 25%; transform: translate(-50%, 50%)"
+          >
+            315°
+          </div>
+          <div
+            class="angle-text"
+            style="top: 50%; left: 10px; transform: translateY(-50%)"
+          >
+            0°
+          </div>
+          <div
+            class="angle-text"
+            style="top: 25%; left: 25%; transform: translate(-50%, -50%)"
+          >
+            45°
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Măsurarea parametrilor pasului Dvs</h2>
+
+    <div class="parentDiv">
+      <div class="childDiv">
+        <div>
+          <h4>Accelerația pe <br />direcția de mers (m/s<sup>2</sup>)</h4>
+          <p><span id="accel" class="measurement-value">0</span></p>
+        </div>
+        <div class="parentDiv">
+          <div class="childDiv">
+            <input
+              type="range"
+              id="offsetAccel"
+              class="slider"
+              min="-2"
+              max="2"
+              value="0"
+              step="0.1"
+              style="width: 100%"
+            />
+          </div>
+          <p class="childDiv" id="sliderValueAccel">0</p>
+        </div>
+      </div>
+      <div class="childDiv">
+        <div>
+          <h4>Unghiul tibiei <br />în timpul mersului (°)</h4>
+          <p><span id="angle" class="measurement-value">0</span></p>
+        </div>
+        <div class="parentDiv">
+          <div class="childDiv">
+            <input
+              type="range"
+              id="offsetAngle"
+              class="slider"
+              min="-2"
+              max="2"
+              value="0"
+              step="0.1"
+              style="width: 100%"
+            />
+          </div>
+          <p class="childDiv" id="sliderValueAngle">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="parentDiv">
+      <div class="childDiv">
+        <canvas id="chartAccel"></canvas>
+      </div>
+      <div class="childDiv">
+        <canvas id="chartAngleLeg"></canvas>
+      </div>
+    </div>
+
+    <div class="footer">
+      <img
+        src="https://172.20.10.2/siglaBIM.png"
+        alt="Faculty Logo"
+        class="faculty-logo"
+      />
+      <img
+        src="https://172.20.10.2/siglaUMF.png"
+        alt="University Logo"
+        class="university-logo"
+      />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+
+    <script>
+      const startTime = Date.now();
+
+      function updateCircle(angle) {
+        const circle = document.getElementById("angleCircle");
+        const centerAngle = document.getElementById("centerAngle");
+        centerAngle.textContent = angle.toFixed(1) + "°";
+        if (angle >= 0) {
+          circle.style.background = `conic-gradient(from 270deg, #4ca431 ${angle}deg, #ffffff ${angle}deg)`;
+        } else {
+          const fillAngle = (360 + angle) % 360;
+          circle.style.background = `conic-gradient(from 270deg, #ffffff ${fillAngle}deg, #4ca431 ${fillAngle}deg)`;
+        }
+      }
+
+      const chart2 = document.getElementById("chartAccel");
+
+      const chartAccel = new Chart(chart2, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Accelerația Dvs",
+              data: [],
+              tension: 0.3,
+              borderWidth: 2,
+              backgroundColor: "#4cf31b",
+              borderColor: "#4ca431",
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Accel (m/s²)",
+              },
+            },
+            x: {
+              type: "linear",
+              beginAtZero: true,
+              grid: {
+                display: false,
+              },
+              ticks: { autoSkip: false, maxRotation: 0 },
+              title: {
+                display: true,
+                text: "Timp (s)",
+              },
+            },
+          },
+          animation: false,
+        },
+      });
+
+      const chart3 = document.getElementById("chartAngleLeg");
+
+      const chartAngleLeg = new Chart(chart3, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Unghiul tibiei",
+              data: [],
+              borderWidth: 2,
+              backgroundColor: "#CA21EC",
+              borderColor: "#7C1191",
+              pointRadius: 0,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              title: {
+                display: true,
+                text: "Unghi (°) ",
+              },
+              beginAtZero: true,
+              min: -90,
+              max: 90,
+            },
+            x: {
+              type: "linear",
+              beginAtZero: true,
+              grid: {
+                display: false,
+              },
+              ticks: { autoSkip: false, maxRotation: 0 },
+              title: {
+                display: true,
+                text: "Timp (s)",
+              },
+            },
+          },
+          animation: false,
+        },
+      });
+
+      const accel = document.getElementById("accel");
+      const angle = document.getElementById("angle");
+      const offsetSliderAccel = document.getElementById("offsetAccel");
+      const offsetSliderAngle = document.getElementById("offsetAngle");
+      const valueDisplayAccel = document.getElementById("sliderValueAccel");
+      const valueDisplayAngle = document.getElementById("sliderValueAngle");
+
+      let filteredAccel = 0;
+      let finalAccel = 0;
+      let finalAngle = 0;
+      let offsetValueAccel = 0;
+      let offsetValueAngle = 0;
+
+      offsetSliderAccel.addEventListener("input", () => {
+        offsetValueAccel = parseFloat(offsetSliderAccel.value);
+        valueDisplayAccel.textContent = offsetSliderAccel.value;
+        console.log(`offsetSliderAccel: ${offsetValueAccel}`);
+      });
+
+      offsetSliderAngle.addEventListener("input", () => {
+        offsetValueAngle = parseFloat(offsetSliderAngle.value);
+        valueDisplayAngle.textContent = offsetSliderAngle.value;
+        console.log(`offsetSliderAngle: ${offsetValueAngle}`);
+      });
+
+      function addValue(whichChart, dataSource) {
+        const currentTime = (Date.now() - startTime) / 1000;
+        whichChart.data.labels.push(currentTime);
+        whichChart.data.datasets[0].data.push(Number(dataSource));
+
+        // if (whichChart.data.labels.length > 100) {
+        //   //whichChart.data.labels.shift();
+        //   whichChart.data.datasets[0].data.shift();
+        // }
+
+        if (currentTime > 1) {
+          whichChart.options.scales.x.min = currentTime - 5;
+          whichChart.options.scales.x.max = currentTime;
+        }
+
+        whichChart.update("none");
+      }
+
+      websock = new WebSocket("ws://" + window.location.hostname + ":81/");
+      websock.onmessage = function (event) {
+        const JSONobj = JSON.parse(event.data);
+
+        const NumberZAccel = Number(JSONobj.Zaccel);
+        const NumberYAccel = Number(JSONobj.Yaccel);
+
+        let netAccel = 0;
+
+        if (
+          !isNaN(NumberZAccel) &&
+          !isNaN(NumberYAccel) &&
+          typeof NumberZAccel === "number" &&
+          typeof NumberYAccel === "number"
+        ) {
+          netAccel = Math.sqrt(
+            Math.pow(NumberZAccel, 2) + Math.pow(NumberYAccel, 2)
+          );
+        }
+
+        let a = 0.3;
+        filteredAccel = a * netAccel + (1 - a) * filteredAccel;
+        if (Math.abs(filteredAccel) < 0.05) filteredAccel = 0; //elimina zgomot prin anularea citirilor nesemnificative
+
+        finalAccel = filteredAccel + offsetValueAccel;
+        console.log(`finalAccel: ${filteredAccel}`);
+        console.log(`finalAccel + Offset: ${finalAccel}`);
+
+        let measuredAngleP = Number(JSONobj.Pitch);
+        let measuredAngleR = Number(JSONobj.Roll);
+
+        let measuredAngle =
+          measuredAngleP !== 0 ? measuredAngleP : measuredAngleR;
+
+        finalAngle = measuredAngle + offsetValueAngle;
+
+        let accelDisplay = finalAccel.toFixed(2);
+        accel.innerHTML = accelDisplay;
+        addValue(chartAccel, filteredAccel);
+
+        let angleDisplay = finalAngle.toFixed(2);
+        angle.innerHTML = angleDisplay;
+        addValue(chartAngleLeg, finalAngle);
+
+        updateCircle(finalAngle);
+      };
+    </script>
+  </body>
+</html>
