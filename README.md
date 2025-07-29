@@ -34,7 +34,7 @@ If u want to try the project: "Assets", "Packages" and "ProjectSettings" are the
 
 4. All components need to be connected on the same Wi-Fi network.
 
-
+Thanks for taking the time to check out my project. Contact me in case of quesiton. I will do my best to help.
 
 
 
