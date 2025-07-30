@@ -19,16 +19,16 @@ ESP32 serves the webpage wirelessly and the live data is sent through websockets
 
 ## Testing
 
+Components are placed on the leg in such  manner:
+
+<img width="355" height="509" alt="Screenshot 2025-07-29 at 19 38 58" src="https://github.com/user-attachments/assets/3a71b5e3-73fd-4d93-aaf6-544508c2833b" />
+<br></br>
+
 The following 2 images show me testing the product. (P.S. files uploaded to Git are in english).
 
 <img width="1430" height="603" alt="Screenshot 2025-07-29 at 19 35 42" src="https://github.com/user-attachments/assets/bf4bed57-43c3-4b5f-af91-eb77b12000a8" />
 
 <img width="1436" height="606" alt="Screenshot 2025-07-29 at 19 36 17" src="https://github.com/user-attachments/assets/da92dc92-956e-4b33-8dcb-c045145c8110" />
-
-
-An ilustration of components placement:
-
-<img width="355" height="509" alt="Screenshot 2025-07-29 at 19 38 58" src="https://github.com/user-attachments/assets/3a71b5e3-73fd-4d93-aaf6-544508c2833b" />
 
 ## Trying the project yourself
 
