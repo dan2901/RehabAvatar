@@ -47,7 +47,7 @@ Important to know that all components need to be connected on the same Wi-Fi net
 For the proxy server, before running the code, you need to create fake certificates (i.e. "cert.pem", "key.pem"). For that, run this line of code in the terminal ` openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes`, then run ` npm install ws` to create your "package-lock.json" and "package-lock.json".
 
 ## 
-#### Thanks for taking the time to check out my project. Contact me in case of quesiton. I will do my best to help.
+#### Thanks for taking the time to check out my project. Contact me if you have any questions. I will do my best to help.
 
 
 
