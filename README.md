@@ -1,6 +1,6 @@
 # RehabAvatar
 
-Simple project of a web page comprising a video game and ways to track gait parameters.
+Simple project of a web page comprising a video game and ways to track gait (walking) parameters.
 
 _Note: This is my first Git and I am also not good in programming. I apologize in advance and I am also open to any advice.
 If it is needed, I can gladly provide further explanations._
